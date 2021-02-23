@@ -19,10 +19,35 @@
   flex-direction: column;
   margin: 15px;
   justify-content: space-between;
+  padding: auto;
 }
 
 .preview_toolbarright > .MuiSvgIcon-root {
-  font-size: 20px !important;
+  font-size: 25px !important;
   margin-bottom: 8px;
   cursor: pointer;
+}
+
+.preview__footer {
+  position: absolute;
+  bottom: 0;
+  right: -25px;
+  transform: translate(-50%, -50%);
+  background-color: yellow;
+  color: #000;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 30px;
+  padding: 7px;
+  cursor: pointer;
+}
+
+.preview__footer > h2 {
+  font-size: 20px;
+  margin-right: 3px;
+}
+
+.preview__sender {
+  font-size: 20px !important;
 }
