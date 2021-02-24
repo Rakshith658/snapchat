@@ -1,4 +1,4 @@
-import React,{useCallback, useRef, useState} from 'react'
+import React,{useCallback, useRef} from 'react'
 import Webcam from 'react-webcam'
 import RadioButtonUncheckedIcon from '@material-ui/icons/RadioButtonUnchecked';
 import { setCameraImage } from './features/Cameraslice';
@@ -31,7 +31,7 @@ function WebcamCapture() {
             // console.log(imageScr);
             // setimage(imageScr)
         },
-        [webcamRef],
+        [webcamRef,dispatch,history]
     )
     return (
         <div className="WebcamCapture">

@@ -16,11 +16,13 @@ import SendIcon from '@material-ui/icons/Send'
 import {v4 as uuid } from 'uuid'
 import { db, storage } from './firebase'
 import firebase from 'firebase'
+import { selectUser } from './features/appSlice'
 
 function Preview() {
     const cameraImage = useSelector(selectCameraImage)
     const history = useHistory()
     const dispatch = useDispatch()
+    const user = useSelector(selectUser)
 
     useEffect(() => {
         if (!cameraImage) {
@@ -44,9 +46,9 @@ function Preview() {
             storage.ref('posts').child(id).getDownloadURL().then((url)=>{
                 db.collection('posts').add({
                     imageUrl:url,
-                    username:"Rakshith",
+                    username:user.username,
                     read:false,
-                    //ProfilePic
+                    profilePic:user.profilePic,
                     timestamp:firebase.default.firestore.FieldValue.serverTimestamp(),
                 })
                 history.replace('/chats')
@@ -66,7 +68,7 @@ function Preview() {
                 <Crop/>
                 <Timer/>
             </div>
-            <img src={cameraImage} alt="Image"/>
+            <img src={cameraImage} alt=""/>
             <div onClick={sendPost} className="preview__footer">
                 <h2>Send</h2>
                 <SendIcon fontSize="small" className="preview__sender"/>

@@ -1,0 +1,14 @@
+.ChatView {
+  position: relative;
+}
+
+.ChatView > img {
+  cursor: pointer;
+}
+
+.ChatView_timer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 8px;
+}

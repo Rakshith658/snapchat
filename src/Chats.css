@@ -13,6 +13,15 @@
   background-color: rgb(46, 114, 170);
   height: 50px;
 }
+.chats_searchIcon {
+  color: white;
+  font-size: 13px !important;
+}
+
+.chats_chatbubble {
+  color: white;
+  font-size: 13px !important;
+}
 
 .chats_avatar {
   height: 25px !important;
@@ -57,4 +66,20 @@
 .chats_posts {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+.chats_TskepicIcon {
+  position: absolute;
+  background-color: white;
+  border-radius: 200px;
+  color: gray;
+  font-size: 40px !important;
+  cursor: pointer;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.chats_TskepicIcon:hover {
+  opacity: 0.8;
 }
